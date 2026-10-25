@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shubham Kashyap – DevOps Engineer</title>
+<meta name="description" content="DevOps engineer available for projects: CI/CD pipelines, cloud infrastructure, Kubernetes, infrastructure as code and security. Contact Shubham Kashyap.">
+<meta name="theme-color" content="#0f2038">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #eef1f5;
+    --surface: #ffffff;
+    --ink: #0f2038;
+    --ink-soft: #46566c;
+    --line: #cfd7e2;
+    --blue: #2447e0;
+    --blue-ink: #ffffff;
+    --pass: #17835a;
+    --pass-bg: #dff3ea;
+    --panel: #0f2038;
+    --panel-text: #dce6f5;
+    --panel-dim: #8ea3c0;
+    color-scheme: light;
+  }
+  :root:not([data-theme="light"]) {
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0b1626;
+      --surface: #11213a;
+      --ink: #e8eef8;
+      --ink-soft: #a3b3ca;
+      --line: #25395a;
+      --blue: #6f8bff;
+      --blue-ink: #0b1626;
+      --pass: #48d19b;
+      --pass-bg: #123a34;
+      --panel: #07101d;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  p { margin: 0; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+
+  .wrap { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+
+  /* Header */
+  header.site {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 1rem; }
+  .brand { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em; }
+  nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; align-items: center; }
+  nav a { text-decoration: none; font-weight: 500; color: var(--ink-soft); }
+  nav a:hover { color: var(--ink); }
+  nav a.cta { color: var(--blue-ink); background: var(--blue); padding: .45rem 1rem; border-radius: 8px; font-weight: 600; }
+  nav a.cta:hover { filter: brightness(1.1); color: var(--blue-ink); }
+
+  /* Hero */
+  .hero { padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(3rem, 7vw, 5rem); }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  .status {
+    display: inline-flex; align-items: center; gap: .6rem;
+    background: var(--pass-bg); color: var(--pass);
+    padding: .35rem .85rem; border-radius: 99px; font-weight: 600; font-size: .95rem;
+    margin-bottom: 1.5rem;
+  }
+  .status i { width: .6rem; height: .6rem; border-radius: 50%; background: var(--pass); display: block; }
+  .hero h1 { font-size: clamp(2.5rem, 5.6vw, 4.4rem); font-weight: 800; }
+  .hero p.lead { margin-top: 1.4rem; font-size: 1.2rem; color: var(--ink-soft); max-width: 34rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: .8rem 1.4rem; border-radius: 10px; font-weight: 600; text-decoration: none;
+    border: 2px solid var(--ink); color: var(--ink); background: transparent;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.primary { background: var(--blue); border-color: var(--blue); color: var(--blue-ink); }
+  .quick { margin-top: 1.6rem; display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; color: var(--ink-soft); font-size: 1rem; }
+  .quick a { text-decoration: none; border-bottom: 1px solid var(--line); }
+  .quick a:hover { color: var(--ink); border-color: var(--ink); }
+
+  /* Pipeline panel */
+  .pipeline {
+    background: var(--panel); color: var(--panel-text);
+    border-radius: 14px; padding: 1.4rem 1.4rem 1.2rem;
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace; font-size: .92rem;
+    box-shadow: 0 24px 50px -28px rgba(15, 32, 56, .6);
+  }
+  .pipeline .head { display: flex; justify-content: space-between; color: var(--panel-dim); margin-bottom: 1rem; gap: 1rem; }
+  .stage { display: flex; align-items: center; gap: .85rem; padding: .62rem 0; border-top: 1px solid rgba(255,255,255,.08); }
+  .stage:first-of-type { border-top: 0; }
+  .dot {
+    width: 1.35rem; height: 1.35rem; border-radius: 50%; flex: none;
+    border: 2px solid var(--panel-dim); display: grid; place-items: center;
+    font-size: .75rem; color: transparent; transition: all .25s ease;
+  }
+  .stage .name { flex: 1; }
+  .stage .meta { color: var(--panel-dim); font-size: .82rem; }
+  .stage.done .dot { background: #48d19b; border-color: #48d19b; color: #07101d; }
+  .stage.running .dot { border-color: #8fb0ff; border-top-color: transparent; animation: spin .7s linear infinite; }
+  .stage.done .meta { color: #7fe0b8; }
+  .pipeline .foot { margin-top: 1rem; padding-top: .9rem; border-top: 1px solid rgba(255,255,255,.08); color: #7fe0b8; min-height: 1.6em; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Sections */
+  section.block { padding: clamp(3rem, 7vw, 5.5rem) 0; border-top: 1px solid var(--line); }
+  .section-head { max-width: 40rem; margin-bottom: 2.5rem; }
+  .section-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); font-weight: 700; }
+  .section-head p { margin-top: 1rem; color: var(--ink-soft); }
+
+  /* Services: ruled list */
+  .services { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(2rem, 6vw, 5rem); }
+  .service { padding: 1.5rem 0; border-top: 2px solid var(--ink); }
+  .service h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: .6rem; }
+  .service p { color: var(--ink-soft); max-width: 30rem; }
+
+  /* Toolchain */
+  .tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem 2.5rem; }
+  .tools h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .8rem; color: var(--blue); }
+  .tools ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+  .tools li {
+    background: var(--surface); border: 1px solid var(--line);
+    padding: .3rem .8rem; border-radius: 6px; font-weight: 500; font-size: .98rem;
+  }
+
+  /* Process: real sequence */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; counter-reset: step; }
+  .steps li { counter-increment: step; position: relative; padding-top: 2.6rem; }
+  .steps li::before {
+    content: counter(step); position: absolute; top: 0; left: 0;
+    width: 1.9rem; height: 1.9rem; border-radius: 50%;
+    background: var(--ink); color: var(--paper);
+    display: grid; place-items: center; font-weight: 700; font-size: .95rem;
+  }
+  .steps li::after {
+    content: ""; position: absolute; top: .95rem; left: 2.4rem; right: -.6rem; height: 2px; background: var(--line);
+  }
+  .steps li:last-child::after { display: none; }
+  .steps h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .35rem; }
+  .steps p { color: var(--ink-soft); font-size: 1rem; }
+
+  /* GitHub strip */
+  .code-strip {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: clamp(1.5rem, 3vw, 2.2rem);
+  }
+  .code-strip h3 { font-size: 1.5rem; font-weight: 700; }
+  .code-strip p { color: var(--ink-soft); margin-top: .4rem; max-width: 34rem; }
+
+  /* Contact */
+  .contact { background: var(--panel); color: var(--panel-text); border-top: 0; }
+  .contact .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+  .contact h2 { font-size: clamp(2rem, 4.4vw, 3.4rem); font-weight: 800; color: #fff; }
+  .contact p.lead { margin-top: 1rem; color: var(--panel-text); max-width: 32rem; }
+  .contact-list { list-style: none; margin: 0; padding: 0; }
+  .contact-list li { padding: 1.1rem 0; border-top: 1px solid rgba(255,255,255,.14); }
+  .contact-list li:last-child { border-bottom: 1px solid rgba(255,255,255,.14); }
+  .contact-list small { display: block; color: var(--panel-dim); font-size: .9rem; margin-bottom: .15rem; }
+  .contact-list a { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 1.35rem; text-decoration: none; color: #fff; overflow-wrap: anywhere; }
+  .contact-list a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .contact .btn.primary { background: #fff; border-color: #fff; color: #0f2038; }
+  .contact .btn { border-color: #fff; color: #fff; }
+  .contact .btn.primary:hover { background: #e8eef8; }
+
+  footer { background: var(--panel); color: var(--panel-dim); padding: 1.5rem 0 2rem; font-size: .95rem; border-top: 1px solid rgba(255,255,255,.1); }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+
+  /* Responsive */
+  @media (max-width: 920px) {
+    .hero-grid, .contact .wrap { grid-template-columns: 1fr; }
+    .services { grid-template-columns: 1fr; }
+    .tools { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr; gap: 1.6rem; }
+    .steps li { padding: 0 0 0 3rem; }
+    .steps li::after { display: none; }
+  }
+  @media (max-width: 600px) {
+    nav ul li:not(:last-child) { display: none; }
+    .tools { grid-template-columns: 1fr; }
+    .btn { flex: 1 1 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn, .dot { transition: none; }
+    .stage.running .dot { animation: none; }
+  }
+</style>
+</head>
+
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#top">Shubham Kashyap</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a class="cta" href="#contact">Hire me</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="status"><i aria-hidden="true"></i>Available for new projects</p>
+        <h1>Infrastructure that scales, stays secure and ships without drama.</h1>
+        <p class="lead">I’m Shubham, a DevOps engineer. I design, automate and secure cloud infrastructure, so your team can release often and sleep well.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:kashyapshubham178@gmail.com?subject=Project%20enquiry">Start a project</a>
+          <a class="btn" href="https://github.com/kashyapshubham178" target="_blank" rel="noopener">See my GitHub</a>
+        </div>
+        <p class="quick">
+          <a href="tel:+918580939916">+91 85809 39916</a>
+          <a href="mailto:kashyapshubham178@gmail.com">kashyapshubham178@gmail.com</a>
+        </p>
+      </div>
+
+      <div class="pipeline" role="img" aria-label="A delivery pipeline running through commit, build, test, security scan, deploy and monitor stages, all passing">
+        <div class="head"><span>main · pipeline #1</span><span id="elapsed">0.0s</span></div>
+        <div class="stage" data-time="0.4"><span class="dot">✓</span><span class="name">Commit pushed to Git</span><span class="meta">git</span></div>
+        <div class="stage" data-time="1.8"><span class="dot">✓</span><span class="name">Build container image</span><span class="meta">docker</span></div>
+        <div class="stage" data-time="3.1"><span class="dot">✓</span><span class="name">Run automated tests</span><span class="meta">ci</span></div>
+        <div class="stage" data-time="4.0"><span class="dot">✓</span><span class="name">Scan for vulnerabilities</span><span class="meta">security</span></div>
+        <div class="stage" data-time="5.2"><span class="dot">✓</span><span class="name">Deploy to cluster</span><span class="meta">kubernetes</span></div>
+        <div class="stage" data-time="5.9"><span class="dot">✓</span><span class="name">Monitor and alert</span><span class="meta">observability</span></div>
+        <div class="foot" id="foot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What I can build and run for you</h2>
+        <p>Pick one piece or hand me the whole path from code commit to production.</p>
+      </div>
+      <div class="services">
+        <article class="service">
+          <h3>CI/CD pipelines</h3>
+          <p>Automated build, test and release flows so every change reaches production the same safe way, using GitHub and GitHub Actions.</p>
+        </article>
+        <article class="service">
+          <h3>Cloud infrastructure as code</h3>
+          <p>Repeatable environments defined in code and kept in Git. Create, change and rebuild them without clicking through consoles.</p>
+        </article>
+        <article class="service">
+          <h3>Containers and Kubernetes</h3>
+          <p>Containerised apps on clusters that scale with demand and recover on their own when something fails.</p>
+        </article>
+        <article class="service">
+          <h3>Security and access control</h3>
+          <p>Secrets management, least-privilege access, image and dependency scanning, and hardened servers built into the pipeline.</p>
+        </article>
+        <article class="service">
+          <h3>Monitoring and reliability</h3>
+          <p>Dashboards, logs and alerts that tell you about a problem before your customers do.</p>
+        </article>
+        <article class="service">
+          <h3>Cost and performance tuning</h3>
+          <p>Right-sized resources and autoscaling, so you pay for what you use and keep response times steady.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="block" id="tools">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Toolchain</h2>
+        <p>The tools I work with day to day. I’m happy to adapt to the stack your team already uses.</p>
+      </div>
+      <div class="tools">
+        <div>
+          <h3>Source and delivery</h3>
+          <ul><li>Git</li><li>GitHub</li><li>GitHub Actions</li><li>Jenkins</li></ul>
+        </div>
+        <div>
+          <h3>Containers and automation</h3>
+          <ul><li>Docker</li><li>Kubernetes</li><li>Terraform</li><li>Ansible</li><li>Helm</li></ul>
+        </div>
+        <div>
+          <h3>Cloud and systems</h3>
+          <ul><li>AWS</li><li>Linux</li><li>Bash</li><li>Nginx</li></ul>
+        </div>
+        <div>
+          <h3>Observability</h3>
+          <ul><li>Prometheus</li><li>Grafana</li><li>ELK stack</li></ul>
+        </div>
+        <div>
+          <h3>Security</h3>
+          <ul><li>Trivy</li><li>IAM policies</li><li>Secrets management</li><li>SSL/TLS</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="block" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How a project runs</h2>
+        <p>A clear path, with something working at every stage.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Assess</h3><p>Review your current setup, risks and goals.</p></li>
+        <li><h3>Design</h3><p>Plan an architecture that fits your traffic and budget.</p></li>
+        <li><h3>Automate</h3><p>Build pipelines and infrastructure as code.</p></li>
+        <li><h3>Secure</h3><p>Lock down access, secrets and dependencies.</p></li>
+        <li><h3>Operate</h3><p>Monitor, document and hand over cleanly.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- GitHub -->
+  <section class="block" id="code">
+    <div class="wrap">
+      <div class="code-strip">
+        <div>
+          <h3>See the work in the open</h3>
+          <p>My repositories, configurations and automation scripts live on GitHub. Connect with me on LinkedIn for background and recommendations.</p>
+        </div>
+        <div class="actions" style="margin-top:0">
+          <a class="btn" href="https://github.com/kashyapshubham178" target="_blank" rel="noopener">GitHub profile</a>
+          <a class="btn" href="https://www.linkedin.com/in/shubham-kashyap-619ba917a" target="_blank" rel="noopener">LinkedIn profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Have a project in mind? Let’s build it properly.</h2>
+        <p class="lead">Tell me what you’re running, where it hurts and when you need it done. I’ll reply with a plan and next steps.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:kashyapshubham178@gmail.com?subject=Project%20enquiry">Email me</a>
+          <a class="btn" href="tel:+918580939916">Call now</a>
+        </div>
+      </div>
+      <ul class="contact-list">
+        <li><small>Email</small><a href="mailto:kashyapshubham178@gmail.com">kashyapshubham178@gmail.com</a></li>
+        <li><small>Phone</small><a href="tel:+918580939916">+91 85809 39916</a></li>
+        <li><small>GitHub</small><a href="https://github.com/kashyapshubham178" target="_blank" rel="noopener">github.com/kashyapshubham178</a></li>
+        <li><small>LinkedIn</small><a href="https://www.linkedin.com/in/shubham-kashyap-619ba917a" target="_blank" rel="noopener">Shubham Kashyap</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Shubham Kashyap. DevOps engineer.</span>
+    <span>Built with Git, hosted anywhere.</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // One-time pipeline sequence in the hero
+  (function () {
+    var stages = Array.prototype.slice.call(document.querySelectorAll('.stage'));
+    var elapsed = document.getElementById('elapsed');
+    var foot = document.getElementById('foot');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var total = stages[stages.length - 1].dataset.time;
+
+    function finish() {
+      stages.forEach(function (s) { s.classList.remove('running'); s.classList.add('done'); s.querySelector('.meta').textContent = s.dataset.time + 's'; });
+      elapsed.textContent = total + 's';
+      foot.textContent = '✓ All stages passed. Live in production.';
+    }
+
+    if (reduce) { finish(); return; }
+
+    var i = 0, start = performance.now();
+    var timer = setInterval(function () {
+      elapsed.textContent = ((performance.now() - start) / 1000).toFixed(1) + 's';
+    }, 100);
+
+    function next() {
+      if (i > 0) {
+        stages[i - 1].classList.remove('running');
+        stages[i - 1].classList.add('done');
+        stages[i - 1].querySelector('.meta').textContent = stages[i - 1].dataset.time + 's';
+      }
+      if (i === stages.length) { clearInterval(timer); finish(); return; }
+      stages[i].classList.add('running');
+      i++;
+      setTimeout(next, 650);
+    }
+    setTimeout(next, 500);
+  })();
+</script>
+</body>
+</html>
